@@ -81,7 +81,7 @@ def roulette():
         roulette()
     elif option.upper() in ["X", "[X]"]:
       system.clear()
-      system.return()
+      system.home()
   else:
     print("Roulette")
     print("[N] - Number\n[C] - Color\n[X] - Exit")
@@ -165,7 +165,7 @@ def menu():
       roulette()
     elif input.upper() in ["X", "[X]"]:
       system.clear()
-      system.return()
+      system.home()
     else:
       print(colored("Error - Function Does Not Exist", "red", attrs=["bold"]))
       time.sleep(1)
@@ -181,7 +181,7 @@ def menu():
       roulette()
     elif input.upper() in ["X", "[X]"]:
       system.clear()
-      system.return()
+      system.home()
     else:
       print("Error - Function Does Not Exist")
       time.sleep(1)
