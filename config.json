@@ -8,8 +8,6 @@
     "colors": true
   },
   "dynamic": {
-    "user": "root",
-    "pass": "root",
     "nonce": "4be3a33552dbc3335063",
     "verifyHash": "d65ee79c1f79f200e0aa8c337616d844bac3e3581792d70daf92381bd58fe402"
   },
