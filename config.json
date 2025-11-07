@@ -1,0 +1,14 @@
+{
+  "socials": {
+    "developer": "ISTEK",
+    "github": "https://github.com/istekdev/BSOS",
+    "created": 1762514264
+  },
+  "config": {
+    "colors": true
+  },
+  "dynamic": {
+    "user": "root",
+    "pass": "root"
+  }
+}
