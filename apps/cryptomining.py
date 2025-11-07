@@ -44,7 +44,7 @@ def mine():
       time.sleep(1)
       break
       system.clear()
-      system.return()
+      system.home()
 
 def menu():
   with open("config.json", "r") as r:
@@ -59,12 +59,12 @@ def menu():
       mine()
     elif input.upper() in ["X", "[X]"]:
       system.clear()
-      system.return()
+      system.home()
     else:
       print(colored("Error - Function Does Not Exist", "red", attrs=["bold"]))
       time.sleep(3)
       system.clear()
-      system.return()
+      system.home()
   else:
     print("Welcome To BSOS Crypto Mining")
     print("")
@@ -75,10 +75,10 @@ def menu():
       mine()
     elif input.upper() in ["X", "[X]"]:
       system.clear()
-      system.return()
+      system.home()
     else:
       print("Error - Function Does Not Exist")
       time.sleep(3)
       system.clear()
-      system.return()
+      system.home()
   
