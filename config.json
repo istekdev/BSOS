@@ -10,5 +10,12 @@
   "dynamic": {
     "user": "root",
     "pass": "root"
-  }
+  },
+  "apps": {
+    "crypto": {
+      "balance": 0
+    },
+    "bank": {
+      "balance": 0
+    }
 }
