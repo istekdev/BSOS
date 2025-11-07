@@ -55,24 +55,25 @@ def nonColor():
     system.clear()
     withColor()
 
-with open("./config.json", "r") as r:
-  config = json.load(r)
+def verify():
+  with open("./config.json", "r") as r:
+    config = json.load(r)
 
-if config["config"]["colors"] == True:
-  print(colored("Verifying...", "yellow", attrs=["bold"]))
-else:
-  print("Verifying...")
-
-if config["apps"]["bank"]["balance"] == 0:
-  config["apps"]["bank"]["balance"] == 1000
-  with open("config.json", "w") as w:
-    json.dump(config, w, indent=4)
   if config["config"]["colors"] == True:
-    print(colored("Welcome! You Have Been Given $1,000", "white", attrs=["bold"]))
+    print(colored("Verifying...", "yellow", attrs=["bold"]))
   else:
-    print("Welcome! You Have Been Given $1,000")
+    print("Verifying...")
 
-if config["config"]["colors"] == True:
-  withColor()
-else:
-  nonColor()
+  if config["apps"]["bank"]["balance"] == 0:
+    config["apps"]["bank"]["balance"] == 1000
+    with open("config.json", "w") as w:
+      json.dump(config, w, indent=4)
+    if config["config"]["colors"] == True:
+      print(colored("Welcome! You Have Been Given $1,000", "white", attrs=["bold"]))
+    else:
+      print("Welcome! You Have Been Given $1,000")
+
+  if config["config"]["colors"] == True:
+    withColor()
+  else:
+    nonColor()
