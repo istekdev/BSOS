@@ -8,7 +8,7 @@ def nonColor():
   print("[L] To Leave App")
   print("")
   calc = input(">> ")
-  if calc in ["L", "l", "[L]", "[l]"]:
+  if calc.upper() in ["L", "[L]"]:
     system.clear()
     system.return()
   try:
@@ -19,10 +19,10 @@ def nonColor():
     print("[C] - Continue")
     print("[L] - Leave")
     option = input(">> ")
-    if option in ["L", "l", "[L]", "[l]"]:
+    if option.upper() in ["L", "[L]"]::
       system.clear()
       system.return()
-    elif option in ["c", "C", "[c]", "[C]"]:
+    elif option.upper() in ["C", "[C]"]::
       system.clear()
       nonColor()
   except Exception as ex:
@@ -33,7 +33,7 @@ def withColor():
   print(colored("[L] To Leave App", "red", attrs=["bold"]))
   print("")
   calc = input(colored(">> ", "white", attrs=["bold"]))
-  if calc in ["L", "l", "[L]", "[l]"]:
+  if calc.upper() in ["L", "[L]"]:
     system.clear()
     system.return()
   try:
@@ -44,10 +44,10 @@ def withColor():
     print(colored("[C] - Continue", "green", attrs=["bold"]))
     print(colored("[L] - Leave", "red", attrs=["bold"]))
     option = input(colored(">> ", "white", attrs=["bold"]))
-    if option in ["L", "l", "[L]", "[l]"]:
+    if option.upper() in ["L", "[L]"]:
       system.clear()
       system.return()
-    elif option in ["c", "C", "[c]", "[C]"]:
+    elif option.upper() in ["C", "[C]"]:
       system.clear()
       nonColor()
   except Exception as ex:
