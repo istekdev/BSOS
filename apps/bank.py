@@ -6,7 +6,7 @@ import time
 def withColor():
   print(colored("BSOS Bank", "white", attrs=["bold"]))
   print("")
-  print(colored("[B] - View Balance", "white", attrs=["bold"]))
+  print(colored("[B] - View Balance\n[X] - Exit", "white", attrs=["bold"]))
   input = input(colored(">> ", "white", attrs=["bold"]))
   if input.upper() in ["B", "[B]"]:
     with open("config.json", "r") as r:
@@ -23,6 +23,9 @@ def withColor():
       time.sleep(1)
       system.clear()
       withColor()
+  elif input.upper() in ["X", "[X]"]:
+    system.clear()
+    system.home()
   else:
     print(colored("Error - Function Dosen't Exist", "red", attrs=["bold"]))
     time.sleep(1)
