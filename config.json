@@ -11,7 +11,7 @@
     "user": "root",
     "pass": "root",
     "nonce": "4be3a33552dbc3335063",
-    "verifyHash": "e49e4096fccfdcccc61f5aea8cfbecfcf225f81eefbb65dec9da43745e6d90f2"
+    "verifyHash": "d65ee79c1f79f200e0aa8c337616d844bac3e3581792d70daf92381bd58fe402"
   },
   "apps": {
     "bank": {
