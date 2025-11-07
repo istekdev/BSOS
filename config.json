@@ -14,9 +14,6 @@
     "verifyHash": ""
   },
   "apps": {
-    "crypto": {
-      "balance": 0
-    },
     "bank": {
       "balance": 0
     }
