@@ -53,11 +53,11 @@ def withColor():
   except Exception as ex:
     print(colored(f"Error - {ex}", "red", attrs=["bold"]))
   
+def verify():
+  with open("./config.json", "r") as r:
+    config = json.load(r)
 
-with open("./config.json", "r") as r:
-  config = json.load(r)
-
-if config["config"]["colors"] == True:
-  withColor()
-else:
-  nonColor()
+  if config["config"]["colors"] == True:
+    withColor()
+  else:
+    nonColor()
