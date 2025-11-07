@@ -10,7 +10,8 @@
   "dynamic": {
     "user": "root",
     "pass": "root",
-    "nonce": ""
+    "nonce": "",
+    "verifyHash": ""
   },
   "apps": {
     "crypto": {
@@ -19,5 +20,4 @@
     "bank": {
       "balance": 0
     }
-  "verifyHash": ""
 }
