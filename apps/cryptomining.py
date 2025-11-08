@@ -27,7 +27,7 @@ def block():
   return version, height, merkleRoot, Target, timestamp, nonce, blockHash
 
 def mine():
-  with open("config.json", "r") as r:
+  with open("./config.json", "r") as r:
     config = json.load(r)
   max = (2**32) - 1
   nonce = 0
@@ -45,7 +45,7 @@ def mine():
       else:
         print("Block Has Been Mined! You Earned $2,500!")
         Balance = config["apps"]["bank"]["balance"] + 2500
-      with open("config.json", "w") as w:
+      with open("./config.json", "w") as w:
         json.dump(Balance, w, indent=4)
       time.sleep(1)
       break
@@ -53,7 +53,7 @@ def mine():
       system.home()
 
 def menu():
-  with open("config.json", "r") as r:
+  with open("./config.json", "r") as r:
     ver = json.load(r)
   if ver["config"]["colors"] == True:
     print(colored(menuTitle + "\n\n", "white", attrs=["bold"]))
