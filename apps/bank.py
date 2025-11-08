@@ -12,7 +12,7 @@ def withColor():
   print(colored(bankTitle + "\n\n", "white", attrs=["bold"]))
   input = input(colored(">> ", "white", attrs=["bold"]))
   if input.upper() in ["B", "[B]"]:
-    with open("config.json", "r") as r:
+    with open("./config.json", "r") as r:
       view = json.load(r)
     print(colored(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}", "white", attrs=["bold"]))
     print("")
@@ -39,7 +39,7 @@ def nonColor():
   print(bankTitle + "\n\n")
   input = input(">> ")
   if input.upper() in ["B", "[B]"]:
-    with open("config.json", "r") as r:
+    with open("./config.json", "r") as r:
       view = json.load(r)
     print(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}")
     print("")
@@ -60,7 +60,7 @@ def nonColor():
     withColor()
 
 def verify():
-  with open("./config.json", "r") as r:
+  with open("././config.json", "r") as r:
     config = json.load(r)
 
   if config["config"]["colors"] == True:
@@ -70,7 +70,7 @@ def verify():
 
   if config["apps"]["bank"]["balance"] == 0:
     config["apps"]["bank"]["balance"] == 1000
-    with open("config.json", "w") as w:
+    with open("./config.json", "w") as w:
       json.dump(config, w, indent=4)
     if config["config"]["colors"] == True:
       print(colored("Welcome! You Have Been Given $1,000", "white", attrs=["bold"]))
