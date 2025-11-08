@@ -4,6 +4,19 @@ import random
 import json
 import time
 
+rouletteTitle = """
+Roulette
+
+[N] - Number
+[C] - Color
+[X] - Exit"""
+
+menuTitle = """
+Welcome To BSOS Gambling
+
+[R] - Roulette
+[X] - Exit"""
+
 def roulette():
   redNums = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
   blackNums = [2, 4, 6, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35]
@@ -14,9 +27,7 @@ def roulette():
   with open("config.json", "r") as r:
     ver = json.load(r)
   if ver["config"]["colors"] == True:
-    print(colored("Roulette", "white", attrs=["bold"]))
-    print(colored("[N] - Number\n[C] - Color\n[X] - Exit", "white", attrs=["bold"]))
-    print("")
+    print(colored(rouletteTitle + "\n\n", "white", attrs=["bold"]))
     option = input(colored(">> ", "white", attrs=["bold"]))
     if option.upper() in ["N", "[N]"]:
       yourSelection = input(colored(">> ", "white", attrs=["bold"]))
@@ -83,9 +94,7 @@ def roulette():
       system.clear()
       system.home()
   else:
-    print("Roulette")
-    print("[N] - Number\n[C] - Color\n[X] - Exit")
-    print("")
+    print(rouletteTitle + "\n\n")
     option = input(">> ")
     if option.upper() in ["N", "[N]"]:
       yourSelection = input(">> ")
@@ -156,10 +165,7 @@ def menu():
   with open("config.json", "r") as r:
     config = json.load(r)
   if config["config"]["colors"] == True:
-    print(colored("Welcome To BSOS Gambling", "white", attrs=["bold"]))
-    print("")
-    print(colored("[X] - Exit", "red", attrs=["bold"]))
-    print(colored("[R] - Roulette", "white", attrs=["bold"]))
+    print(menuTitle + "\n\n")
     input = input(colored(">> ", "white", attrs=["bold"]))
     if input.upper() in ["R", "[R]"]:
       roulette()
@@ -172,10 +178,7 @@ def menu():
       system.clear()
       menu()
   else:
-    print("Welcome To BSOS Gambling")
-    print("")
-    print("[X] - Exit")
-    print("[R] - Roulette")
+    print(menuTitle + "\n\n")
     input = input(">> ")
     if input.upper() in ["R", "[R]"]:
       roulette()
