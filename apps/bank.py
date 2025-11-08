@@ -9,19 +9,19 @@ Welcome to BSOS Bank
 [B] - View Balance"""
 
 def withColor():
-  print(system.coloring(bankTitle + "\n\n", "white"))
-  input = input(system.coloring(">> ", "white"))
+  print(colored(bankTitle + "\n\n", "white", attrs=["bold"]))
+  input = input(colored(">> ", "white", attrs=["bold"]))
   if input.upper() in ["B", "[B]"]:
     with open("./config.json", "r") as r:
       view = json.load(r)
-    print(system.coloring(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}\n\n", "white"))
-    print(system.coloring("[X] - Exit", "white"))
-    option = input(system.coloring(">> ", "white"))
+    print(colored(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}\n\n", "white", attrs=["bold"]))
+    print(colored("[X] - Exit", "white", attrs=["bold"]))
+    option = input(colored(">> ", "white", attrs=["bold"]))
     if option.upper() in ["X", "[X]"]:
       system.clear()
       withColor()
     else:
-      print(system.coloring("Error - Function Dosen't Exist", "red"))
+      print(colored("Error - Function Dosen't Exist", "red", attrs=["bold"]))
       time.sleep(1)
       system.clear()
       withColor()
@@ -29,7 +29,7 @@ def withColor():
     system.clear()
     system.home()
   else:
-    print(system.coloring("Error - Function Dosen't Exist", "red"))
+    print(colored("Error - Function Dosen't Exist", "red", attrs=["bold"]))
     time.sleep(1)
     system.clear()
     withColor()
@@ -62,7 +62,7 @@ def verify():
     config = json.load(r)
 
   if config["config"]["colors"] == True:
-    print(system.coloring("Verifying...", "yellow"))
+    print(colored("Verifying...", "yellow", attrs=["bold"]))
   else:
     print("Verifying...")
 
@@ -71,7 +71,7 @@ def verify():
     with open("./config.json", "w") as w:
       json.dump(config, w, indent=4)
     if config["config"]["colors"] == True:
-      print(system.coloring("Welcome! You Have Been Given $1,000", "white"))
+      print(colored("Welcome! You Have Been Given $1,000", "white", attrs=["bold"]))
     else:
       print("Welcome! You Have Been Given $1,000")
 
