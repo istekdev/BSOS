@@ -3,10 +3,17 @@ import system
 import json
 import time
 
+calcTitle = """
+Welcome to BSOS Calculator
+
+[L] - Leave"""
+
+optionTitle = """
+[C] - Continue
+[L] - Leave"""
+
 def nonColor():
-  print("Calculator | Version 1.0.0")
-  print("[L] To Leave App")
-  print("")
+  print(calcTitle + "\n\n")
   calc = input(">> ")
   if calc.upper() in ["L", "[L]"]:
     system.clear()
@@ -15,9 +22,7 @@ def nonColor():
     output = eval(calc)
     print(output)
     time.sleep(1)
-    print("")
-    print("[C] - Continue")
-    print("[L] - Leave")
+    print("\n\n" + optionTitle)
     option = input(">> ")
     if option.upper() in ["L", "[L]"]::
       system.clear()
@@ -29,9 +34,7 @@ def nonColor():
     print(f"Error - {ex}")
 
 def withColor():
-  print(colored("Calculator | Version 1.0.0", "white", attrs=["bold"]))
-  print(colored("[L] To Leave App", "red", attrs=["bold"]))
-  print("")
+  print(colored(calcTitle + "\n\n", "white", attrs=["bold"]))
   calc = input(colored(">> ", "white", attrs=["bold"]))
   if calc.upper() in ["L", "[L]"]:
     system.clear()
@@ -40,9 +43,7 @@ def withColor():
     output = eval(calc)
     print(colored(output, "white", attrs=["bold"]))
     time.sleep(1)
-    print("")
-    print(colored("[C] - Continue", "green", attrs=["bold"]))
-    print(colored("[L] - Leave", "red", attrs=["bold"]))
+    print(colored("\n\n" + optionTitle, "green", attrs=["bold"]))
     option = input(colored(">> ", "white", attrs=["bold"]))
     if option.upper() in ["L", "[L]"]:
       system.clear()
