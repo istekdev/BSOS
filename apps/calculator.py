@@ -1,3 +1,4 @@
+from termcolor import colored
 import system
 import json
 import time
