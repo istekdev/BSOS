@@ -8,8 +8,7 @@
     "colors": true
   },
   "dynamic": {
-    "nonce": null,
-    "verifyHash": null
+    "nonce": null
   },
   "apps": {
     "bank": {
