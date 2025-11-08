@@ -1,3 +1,4 @@
+from termcolor import colored
 from security import hashing
 from hashlib import sha256
 import system
