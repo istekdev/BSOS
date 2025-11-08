@@ -1,4 +1,3 @@
-from termcolor import colored
 import system
 import json
 import time
@@ -34,17 +33,17 @@ def nonColor():
     print(f"Error - {ex}")
 
 def withColor():
-  print(colored(calcTitle + "\n\n", "white", attrs=["bold"]))
-  calc = input(colored(">> ", "white", attrs=["bold"]))
+  print(system.coloring(calcTitle + "\n\n", "white"))
+  calc = input(system.coloring(">> ", "white"))
   if calc.upper() in ["L", "[L]"]:
     system.clear()
     system.home()
   try:
     output = eval(calc)
-    print(colored(output, "white", attrs=["bold"]))
+    print(system.coloring(output, "white"))
     time.sleep(1)
-    print(colored("\n\n" + optionTitle, "green", attrs=["bold"]))
-    option = input(colored(">> ", "white", attrs=["bold"]))
+    print(system.coloring("\n\n" + optionTitle, "green"))
+    option = input(system.coloring(">> ", "white"))
     if option.upper() in ["L", "[L]"]:
       system.clear()
       system.home()
@@ -52,7 +51,7 @@ def withColor():
       system.clear()
       nonColor()
   except Exception as ex:
-    print(colored(f"Error - {ex}", "red", attrs=["bold"]))
+    print(system.coloring(f"Error - {ex}", "red"))
   
 def verify():
   with open("./config.json", "r") as r:
