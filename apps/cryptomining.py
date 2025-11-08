@@ -33,21 +33,21 @@ def menu():
   with open("./config.json", "r") as r:
     config = json.load(r)
   if config["config"]["colors"] == True:
-    print(system.coloring(menuTitle + "\n\n", "white"))
-    input = input(system.coloring(">> ", "white"))
+    print(colored(menuTitle + "\n\n", "white", attrs=["bold"]))
+    input = input(colored(">> ", "white", attrs=["bold"]))
     if input.upper() in ["S", "[S]"]:
       system.clear()
       while nonce < max:
         nonce += 1
         bHash = sha256(sha256(block()[0].to_bytes(4, "big") + block()[1].to_bytes(3, "big") + block()[2] + bytes.fromhex(block()[3]) + block()[4].encode("utf-8") + nonce.to_bytes(32, "big")).digest()).hexdigest()
         if config["config"]["colors"] == True:
-          print(system.coloring(f"Mining - Current Hash: {bHash}", "yellow"))
+          print(colored(f"Mining - Current Hash: {bHash}", "yellow", attrs=["bold"]))
         else:
           print(f"Mining - Current Hash: {bHash}")
       
         if int(bHash, 16) <= target:
           if config["config"]["colors"] == True:
-            print(system.coloring("Block Has Been Mined! You Earned $2,500!", "green"))
+            print(colored("Block Has Been Mined! You Earned $2,500!", "green", attrs=["bold"]))
           else:
             print("Block Has Been Mined! You Earned $2,500!")
             Balance = config["apps"]["bank"]["balance"] + 2500
@@ -63,7 +63,7 @@ def menu():
       system.clear()
       system.home()
     else:
-      print(system.coloring("Error - Function Does Not Exist", "red"))
+      print(colored("Error - Function Does Not Exist", "red", attrs=["bold"]))
       time.sleep(3)
       system.clear()
       system.home()
@@ -76,13 +76,13 @@ def menu():
         nonce += 1
         bHash = sha256(sha256(block()[0].to_bytes(4, "big") + block()[1].to_bytes(3, "big") + block()[2] + bytes.fromhex(block()[3]) + block()[4].encode("utf-8") + nonce.to_bytes(32, "big")).digest()).hexdigest()
         if config["config"]["colors"] == True:
-          print(system.coloring(f"Mining - Current Hash: {bHash}", "yellow"))
+          print(colored(f"Mining - Current Hash: {bHash}", "yellow", attrs=["bold"]))
         else:
           print(f"Mining - Current Hash: {bHash}")
       
         if int(bHash, 16) <= target:
           if config["config"]["colors"] == True:
-            print(system.coloring("Block Has Been Mined! You Earned $2,500!", "green"))
+            print(colored("Block Has Been Mined! You Earned $2,500!", "green", attrs=["bold"]))
           else:
             print("Block Has Been Mined! You Earned $2,500!")
             Balance = config["apps"]["bank"]["balance"] + 2500
