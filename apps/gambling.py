@@ -24,7 +24,7 @@ def roulette():
   currentNumber = random.randint(1, 36)
   yourSelection = ""
   
-  with open("config.json", "r") as r:
+  with open("./config.json", "r") as r:
     ver = json.load(r)
   if ver["config"]["colors"] == True:
     print(colored(rouletteTitle + "\n\n", "white", attrs=["bold"]))
@@ -51,7 +51,7 @@ def roulette():
         preBalance = ver["apps"]["bank"]["balance"]
         print(colored(f"You Just Won ${(preBalance * 2)}!", "green", attrs=["bold"]))
         preBalance = preBalance * 2
-        with open("config.json", "w") as w:
+        with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
         time.sleep(1)
         systemc.clear()
@@ -85,7 +85,7 @@ def roulette():
         preBalance = ver["apps"]["bank"]["balance"]
         print(colored(f"You Just Won ${(preBalance * 2)}", "green", attrs=["bold"]))
         preBalance = preBalance * 2
-        with open("config.json", "w") as w:
+        with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
         time.sleep(1)
         system.clear()
@@ -118,7 +118,7 @@ def roulette():
         preBalance = ver["apps"]["bank"]["balance"]
         print(f"You Just Won ${(preBalance * 2)}!")
         preBalance = preBalance * 2
-        with open("config.json", "w") as w:
+        with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
         time.sleep(1)
         systemc.clear()
@@ -152,7 +152,7 @@ def roulette():
         preBalance = ver["apps"]["bank"]["balance"]
         print(f"You Just Won ${(preBalance * 2)}")
         preBalance = preBalance * 2
-        with open("config.json", "w") as w:
+        with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
         time.sleep(1)
         system.clear()
@@ -162,7 +162,7 @@ def roulette():
       menu()
 
 def menu():
-  with open("config.json", "r") as r:
+  with open("./config.json", "r") as r:
     config = json.load(r)
   if config["config"]["colors"] == True:
     print(menuTitle + "\n\n")
