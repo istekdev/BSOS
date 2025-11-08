@@ -1,4 +1,3 @@
-from termcolor import colored
 import core
 import os
 
