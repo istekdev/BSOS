@@ -1,3 +1,4 @@
+from termcolor import colored
 import core
 import os
 
@@ -6,3 +7,6 @@ def clear():
 
 def home():
   core.menu()
+
+def coloring(text, color):
+  return print(colored(text, color, attrs=["bold"]))
