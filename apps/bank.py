@@ -14,8 +14,7 @@ def withColor():
   if input.upper() in ["B", "[B]"]:
     with open("./config.json", "r") as r:
       view = json.load(r)
-    print(colored(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}", "white", attrs=["bold"]))
-    print("")
+    print(colored(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}\n\n", "white", attrs=["bold"]))
     print(colored("[X] - Exit", "white", attrs=["bold"]))
     option = input(colored(">> ", "white", attrs=["bold"]))
     if option.upper() in ["X", "[X]"]:
@@ -41,8 +40,7 @@ def nonColor():
   if input.upper() in ["B", "[B]"]:
     with open("./config.json", "r") as r:
       view = json.load(r)
-    print(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}")
-    print("")
+    print(f"Current Balance: ${str(view["apps"]["bank"]["balance"])}\n\n")
     print("[X] - Exit")
     option = input(">> ")
     if option.upper() in ["X", "[X]"]:
