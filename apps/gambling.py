@@ -1,4 +1,5 @@
 from termcolor import colored
+from security import hashing
 import system
 import random
 import json
@@ -53,6 +54,7 @@ def roulette():
         preBalance = preBalance * 2
         with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
+        hashing.start()
         time.sleep(1)
         systemc.clear()
         roulette()
@@ -87,6 +89,7 @@ def roulette():
         preBalance = preBalance * 2
         with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
+        hashing.start()
         time.sleep(1)
         system.clear()
         roulette()
@@ -120,8 +123,9 @@ def roulette():
         preBalance = preBalance * 2
         with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
+        hashing.start()
         time.sleep(1)
-        systemc.clear()
+        system.clear()
         roulette()
     elif option.upper() in ["C", "[C]"]:
       print("Pick a Color, Either Black or Red.")
@@ -154,6 +158,7 @@ def roulette():
         preBalance = preBalance * 2
         with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
+        hashing.start()
         time.sleep(1)
         system.clear()
         roulette()
