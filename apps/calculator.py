@@ -34,17 +34,17 @@ def nonColor():
     print(f"Error - {ex}")
 
 def withColor():
-  print(system.coloring(calcTitle + "\n\n", "white"))
-  calc = input(system.coloring(">> ", "white"))
+  print(colored(calcTitle + "\n\n", "white", attrs=["bold"]))
+  calc = input(colored(">> ", "white", attrs=["bold"]))
   if calc.upper() in ["L", "[L]"]:
     system.clear()
     system.home()
   try:
     output = eval(calc)
-    print(system.coloring(output, "white"))
+    print(colored(output, "white", attrs=["bold"]))
     time.sleep(1)
-    print(system.coloring("\n\n" + optionTitle, "green"))
-    option = input(system.coloring(">> ", "white"))
+    print(colored("\n\n" + optionTitle, "green", attrs=["bold"]))
+    option = input(colored(">> ", "white", attrs=["bold"]))
     if option.upper() in ["L", "[L]"]:
       system.clear()
       system.home()
@@ -52,7 +52,7 @@ def withColor():
       system.clear()
       nonColor()
   except Exception as ex:
-    print(system.coloring(f"Error - {ex}", "red"))
+    print(colored(f"Error - {ex}", "red", attrs=["bold"]))
   
 def verify():
   with open("./config.json", "r") as r:
