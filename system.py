@@ -9,4 +9,4 @@ def home():
   core.menu()
 
 def coloring(text, color):
-  return print(colored(text, color, attrs=["bold"]))
+  return colored(text, color, attrs=["bold"])
