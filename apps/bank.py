@@ -3,10 +3,13 @@ import system
 import json
 import time
 
+bankTitle = """
+Welcome to BSOS Bank
+
+[B] - View Balance"""
+
 def withColor():
-  print(colored("BSOS Bank", "white", attrs=["bold"]))
-  print("")
-  print(colored("[B] - View Balance\n[X] - Exit", "white", attrs=["bold"]))
+  print(colored(bankTitle + "\n\n", "white", attrs=["bold"]))
   input = input(colored(">> ", "white", attrs=["bold"]))
   if input.upper() in ["B", "[B]"]:
     with open("config.json", "r") as r:
@@ -33,9 +36,7 @@ def withColor():
     withColor()
 
 def nonColor():
-  print("BSOS Bank")
-  print("")
-  print("[B] - View Balance")
+  print(bankTitle + "\n\n")
   input = input(">> ")
   if input.upper() in ["B", "[B]"]:
     with open("config.json", "r") as r:
