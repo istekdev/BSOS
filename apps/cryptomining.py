@@ -10,6 +10,12 @@ difficulty = 1000 * 120
 target = ((2**224) * ((2**32) - 1)) // difficulty
 targetByted = target.to_bytes(32, "big")
 
+menuTitle = """
+Welcome To BSOS Crypto Mining
+
+[S] - Start
+[X] - Exit"""
+
 def block():
   version = 1
   height = random.getrandbits(24)
@@ -50,9 +56,7 @@ def menu():
   with open("config.json", "r") as r:
     ver = json.load(r)
   if ver["config"]["colors"] == True:
-    print(colored("Welcome To BSOS Crypto Mining", "white", attrs=["bold"]))
-    print("")
-    print(colored("[S] - Start\n[X] - Exit", "white", attrs=["bold"]))
+    print(colored(menuTitle + "\n\n", "white", attrs=["bold"]))
     input = input(colored(">> ", "white", attrs=["bold"]))
     if input.upper() in ["S", "[S]"]:
       system.clear()
@@ -66,9 +70,7 @@ def menu():
       system.clear()
       system.home()
   else:
-    print("Welcome To BSOS Crypto Mining")
-    print("")
-    print("[S] - Start\n[X] - Exit")
+    print(menuTitle + "\n\n")
     input = input(">> ")
     if input.upper() in ["S", "[S]"]:
       system.clear()
