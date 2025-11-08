@@ -1,4 +1,5 @@
 from termcolor import colored
+from security import hashing
 from hashlib import sha256
 import system
 import random
@@ -47,6 +48,8 @@ def mine():
         Balance = config["apps"]["bank"]["balance"] + 2500
       with open("./config.json", "w") as w:
         json.dump(Balance, w, indent=4)
+      hashing.start()
+        
       time.sleep(1)
       break
       system.clear()
