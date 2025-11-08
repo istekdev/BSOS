@@ -6,6 +6,3 @@ def clear():
 
 def home():
   core.menu()
-
-def coloring(text, color):
-  return colored(text, color, attrs=["bold"])
