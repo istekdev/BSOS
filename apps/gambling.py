@@ -1,4 +1,3 @@
-from termcolor import colored
 from security import hashing
 import system
 import random
@@ -28,29 +27,29 @@ def roulette():
   with open("./config.json", "r") as r:
     ver = json.load(r)
   if ver["config"]["colors"] == True:
-    print(colored(rouletteTitle + "\n\n", "white", attrs=["bold"]))
-    option = input(colored(">> ", "white", attrs=["bold"]))
+    print(system.coloring(rouletteTitle + "\n\n", "white"))
+    option = input(system.coloring(">> ", "white"))
     if option.upper() in ["N", "[N]"]:
-      yourSelection = input(colored(">> ", "white", attrs=["bold"]))
+      yourSelection = input(system.coloring(">> ", "white"))
       if yourSelection.isdigit() and if yourSelection <= 36:
         pass
       else:
-        print(colored("Error - Must Be A Valid Number Between 1 and 36", "red", attrs=["bold"]))
+        print(system.coloring("Error - Must Be A Valid Number Between 1 and 36", "red"))
         time.sleep(1)
         system.clear()
         roulette()
       for c in range(5, 0, -1):
-        print(colored(f"Rolling - Results In: {c}", "white", attrs=["bold"]))
+        print(system.coloring(f"Rolling - Results In: {c}", "white"))
         time.sleep(1)
         system.clear()
-      print(colored(f"Your Number: {str(yourSelection)}", "white", attrs=["bold"]))
+      print(system.coloring(f"Your Number: {str(yourSelection)}", "white"))
       if currentNumber in blackNums:
-        print(colored(f"Rolled Number: {str(currentNumber)}", "black", attrs=["bold"]))
+        print(system.coloring(f"Rolled Number: {str(currentNumber)}", "black"))
       elif currentNumber in redNums:
-        print(colored(f"Rolled Number: {str(currentNumber)}", "red", attrs=["bold"]))
+        print(system.coloring(f"Rolled Number: {str(currentNumber)}", "red"))
       if yourSelectionn == currentNumber:
         preBalance = ver["apps"]["bank"]["balance"]
-        print(colored(f"You Just Won ${(preBalance * 2)}!", "green", attrs=["bold"]))
+        print(system.coloring(f"You Just Won ${(preBalance * 2)}!", "green"))
         preBalance = preBalance * 2
         with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
@@ -59,14 +58,14 @@ def roulette():
         systemc.clear()
         roulette()
     elif option.upper() in ["C", "[C]"]:
-      print(colored("Pick a Color, Either Black or Red.", "white", attrs=["bold"]))
-      yourSelection = input(colored(">> ", "white", attrs=["bold"]))
+      print(system.coloring("Pick a Color, Either Black or Red.", "white"))
+      yourSelection = input(system.coloring(">> ", "white"))
       if yourSelectionu.upper() == "BLACK":
         pass
       elif yourSelection.upper() == "RED":
         pass
       else:
-        print(colored("Error - Choose A Valid Color", "red", attrs=["bold"]))
+        print(system.coloring("Error - Choose A Valid Color", "red"))
         time.sleep(1)
         system.clear()
         roulette()
@@ -75,17 +74,17 @@ def roulette():
       elif currentNumber in redNums:
         currentColor = "RED"
       for c in range(5, 0, -1):
-        print(colored(f"Rolling Color - Results In {c}", "white", attrs=["bold"]))
+        print(system.coloring(f"Rolling Color - Results In {c}", "white"))
         time.sleep(1)
         system.clear()
-      print(colored(f"Your Color: {yourSelection}", "white", attrs=["bold"]))
+      print(system.coloring(f"Your Color: {yourSelection}", "white"))
       if currentNumber in blackNums:
-        print(colored("Black Was Rolled", "black", attrs=["bold"]))
+        print(system.coloring("Black Was Rolled", "black"))
       elif currentNumber in redNums:
-        print(colored("Red Was Rolled", "red", attrs=["bold"]))
+        print(system.coloring("Red Was Rolled", "red"))
       if yourSelection.upper() == currentColor:
         preBalance = ver["apps"]["bank"]["balance"]
-        print(colored(f"You Just Won ${(preBalance * 2)}", "green", attrs=["bold"]))
+        print(system.coloring(f"You Just Won ${(preBalance * 2)}", "green"))
         preBalance = preBalance * 2
         with open("./config.json", "w") as w:
           json.dump(preBalance, w, indent=4)
@@ -171,14 +170,14 @@ def menu():
     config = json.load(r)
   if config["config"]["colors"] == True:
     print(menuTitle + "\n\n")
-    input = input(colored(">> ", "white", attrs=["bold"]))
+    input = input(system.coloring(">> ", "white"))
     if input.upper() in ["R", "[R]"]:
       roulette()
     elif input.upper() in ["X", "[X]"]:
       system.clear()
       system.home()
     else:
-      print(colored("Error - Function Does Not Exist", "red", attrs=["bold"]))
+      print(system.coloring("Error - Function Does Not Exist", "red"))
       time.sleep(1)
       system.clear()
       menu()
