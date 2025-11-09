@@ -15,7 +15,6 @@ def start():
     json.dump(config, w, indent=4)
 
 def verify():
-  nonce = None
   verified = False
   if config["configHash"] == sha256(sha256(static).digest()).hexdigest():
     verified = True
