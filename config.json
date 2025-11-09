@@ -8,6 +8,7 @@
     "colors": true
   },
   "dynamic": {
+    "user": null,
     "nonce": null
   },
   "apps": {
