@@ -17,7 +17,7 @@ def nonColor():
   calc = input(">> ")
   if calc.upper() in ["L", "[L]"]:
     system.clear()
-    system.home()
+    return
   try:
     output = eval(calc)
     print(output)
@@ -26,7 +26,7 @@ def nonColor():
     option = input(">> ")
     if option.upper() in ["L", "[L]"]::
       system.clear()
-      system.home()
+      return
     elif option.upper() in ["C", "[C]"]::
       system.clear()
       nonColor()
@@ -38,7 +38,7 @@ def withColor():
   calc = input(colored(">> ", "white", attrs=["bold"]))
   if calc.upper() in ["L", "[L]"]:
     system.clear()
-    system.home()
+    return
   try:
     output = eval(calc)
     print(colored(output, "white", attrs=["bold"]))
@@ -47,7 +47,7 @@ def withColor():
     option = input(colored(">> ", "white", attrs=["bold"]))
     if option.upper() in ["L", "[L]"]:
       system.clear()
-      system.home()
+      return
     elif option.upper() in ["C", "[C]"]:
       system.clear()
       nonColor()
