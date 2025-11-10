@@ -61,12 +61,12 @@ def menu():
           menu()
     elif input.upper() in ["X", "[X]"]:
       system.clear()
-      system.home()
+      return
     else:
       print(colored("Error - Function Does Not Exist", "red", attrs=["bold"]))
       time.sleep(3)
       system.clear()
-      system.home()
+      return
   else:
     print(menuTitle + "\n\n")
     input = input(">> ")
@@ -96,7 +96,7 @@ def menu():
           menu()
     elif input.upper() in ["X", "[X]"]:
       system.clear()
-      system.home()
+      return
     else:
       print("Error - Function Does Not Exist")
       time.sleep(3)
