@@ -49,23 +49,23 @@ def passwordGen(security):
 
 def menu():
   if config["config"]["colors"] == True:
-    system.colors(randomTitle + "\n\n", "white", "print")
-    input = system.colors(">> ", "white", "input")
+    print(colored(randomTitle + "\n\n", "white", attrs=["bold"]))
+    input = input(colored(">> ", "white", attrs=["bold"]))
     if input.upper() in ["X", "[X]"]:
       system.clear()
       system.home()
     elif input.upper() in ["P", "[P]"]:
       system.clear()
-      system.colors("[LITTLE] - Little Security\n\n[MOD] - Moderate Security\n\n[HIGH] - High Security\n\n[X] - Exit\n\n", "white", "print")
-      option = system.colors(">> ", "white", "input")
+      print(colored("[LITTLE] - Little Security\n\n[MOD] - Moderate Security\n\n[HIGH] - High Security\n\n[X] - Exit\n\n", "white", attrs=["bold"]))
+      option = input(colored(">> ", "white", attrs=["bold"]))
       if option.upper() in ["X", "[X]"]:
         system.clear()
         menu()
       elif option.upper() in ["LITTLE", "[LITTLE]"]:
         while True:
           system.clear()
-          system.colors("Your Unsecure Password Is: " + passwordGen("LITTLE") + "\n\n", "white", "print")
-          cont = input(colored("Continue (y/n): ", "white", "print")
+          print(colored("Your Unsecure Password Is: " + passwordGen("LITTLE") + "\n\n", "white", attrs=["bold"]))
+          cont = input(colored("Continue (y/n): ", "white", attrs=["bold"]))
           if cont.upper() != "Y":
             system.clear()
             menu()
@@ -73,8 +73,8 @@ def menu():
       elif option.upper() in ["MOD", "[MOD]"]:
         while True:
           system.clear()
-          system.colors("Your Moderately Secure Password Is: " + passwordGen("MOD") + "\n\n", "white", "print")
-          cont = input(colored("Continue (y/n): ", "white", "print")
+          print(colored("Your Moderately Secure Password Is: " + passwordGen("MOD") + "\n\n", "white", attrs=["bold"]))
+          cont = input(colored("Continue (y/n): ", "white", attrs=["bold"]))
           if cont.upper() != "Y":
             system.clear()
             menu()
@@ -82,14 +82,14 @@ def menu():
       elif option.upper() in ["HIGH", "[HIGH]"]:
         while True:
           system.clear()
-          system.colors("Your Very Secure Password Is: " + passwordGen("HIGH") + "\n\n", "white", "print")
-          cont = input(colored("Continue (y/n): ", "white", "print")
+          print(colored("Your Very Secure Password Is: " + passwordGen("HIGH") + "\n\n", "white", attrs=["bold"]))
+          cont = input(colored("Continue (y/n): ", "white", attrs=["bold"]))
           if cont.upper() != "Y":
             system.clear()
             menu()
             break
       else:
-        system.colors("Error - Function Does Not Exist", "red", "print")
+        print(colored("Error - Function Does Not Exist", "red", attrs=["bold"]))
         time.sleep(3)
         system.clear()
         menu()
