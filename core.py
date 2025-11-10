@@ -138,13 +138,26 @@ def login(option):
 def logout(option):
   if option.lower() == "colors":
     print(colored("Logging Out...", "yellow", attrs=["bold"]))
-    aes.e()
-    print(colored("Logged Out!", "green", attrs=["bold"]))
-    time.sleep(2)
-    return
+    if hashing.verify() == True:
+      aes.e()
+      print(colored("Logged Out!", "green", attrs=["bold"]))
+      time.sleep(2)
+      return
+    else:
+      print(colored("Error - Tampering Detected", "red", attrs=["bold"]))
+      time.sleep(2)
+      system.clear()
+      login()
   elif option.lower() == "regular":
     print("Logging Out...")
-    aes.e()
-    print("Logged Out!")
-    time.sleep(2)
-    return
+    if hashing.verify() == True:
+      aes.e()
+      print("Logged Out!")
+      time.sleep(2)
+      return
+    else:
+      print("Error - Tampering Detected")
+      time.sleep(2)
+      system.clear()
+      login()
+    
