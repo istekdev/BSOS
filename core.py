@@ -141,6 +141,10 @@ def logout(option):
     if hashing.verify() == True:
       aes.e()
       print(colored("Logged Out!", "green", attrs=["bold"]))
+      config["dynamic"]["timestamp"] = round(time.time())
+      with open("config.json", "w") as w:
+        json.dump(config, w, indent=4)
+      hashing.start()
       time.sleep(2)
       return
     else:
@@ -153,6 +157,10 @@ def logout(option):
     if hashing.verify() == True:
       aes.e()
       print("Logged Out!")
+      config["dynamic"]["timestamp"] = round(time.time())
+      with open("config.json", "w") as w:
+        json.dump(config, w, indent=4)
+      hashing.start()
       time.sleep(2)
       return
     else:
