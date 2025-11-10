@@ -18,6 +18,7 @@
   "apps": {
     "bank": {
       "balance": 0
-    },
+    }
+  },
   "configHash": null
 }
