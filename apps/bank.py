@@ -27,7 +27,7 @@ def withColor():
       withColor()
   elif input.upper() in ["X", "[X]"]:
     system.clear()
-    core.home()
+    return
   else:
     print(colored("Error - Function Dosen't Exist", "red", attrs=["bold"]))
     time.sleep(1)
@@ -45,7 +45,7 @@ def nonColor():
     option = input(">> ")
     if option.upper() in ["X", "[X]"]:
       system.clear()
-      core.home()
+      return
     else:
       print("Error - Function Dosen't Exist")
       time.sleep(1)
