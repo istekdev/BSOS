@@ -16,17 +16,17 @@ Display:
       
 def menu():
   if config["config"]["colors"] == True:
-    system.colors(settingsTitle + "\n\n", "white", "print")
-    input = system.colors(">> ", "white", "input")
+    print(colored(settingsTitle + "\n\n", "white", attrs=["bold"]))
+    input = input(colored(">> ", "white", attrs=["bold"]))
     if input.upper() in ["COLORS", "[COLORS]"]:
       system.clear()
-      system.colors("Text Colors:\n\n[OFF] - Turn Off Text Colors\n\n[X] - Exit", "red", "print")
-      option = system.colors(">> ", "white", "input")
+      print(colored("Text Colors:\n\n[OFF] - Turn Off Text Colors\n\n[X] - Exit", "red", attrs=["bold"]))
+      option = input(colored(">> ", "white", attrs=["bold"]))
       if option.upper() in ["OFF", "[OFF]"]:
         config["config"]["colors"] = False
         with open("./config.json", "w") as w:
           json.dump(config, w, indent=4)
-      system.colors("Saved Settings!", "green", "print")
+      print(colored("Saved Settings!", "green", attrs=["bold"]))
       hashing.start()
       system.clear()
       menu()
@@ -34,7 +34,7 @@ def menu():
         system.clear()
         menu()
       else:
-        system.colors("Error - Function Does Not Exist", "red", "print")
+        print(colored("Error - Function Does Not Exist", "red", attrs=["bold"]))
         time.sleep(3)
         system.clear()
         menu()
