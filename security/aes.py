@@ -37,6 +37,7 @@ def d():
     password = (ephemeral.password).encode("utf-8")
     aes = AESGCM(pbkdf2_hmac("sha256", password, salt, 200_000, dklen=32))
     config["apps"]["bank"]["balance"] = aes.decrypt(nonce, config["apps"]["bank"]["balance"], None)
+    config["dynamic"]["status"] = aes.decrypt(nonce, config["dynamic"]["status"], None)
     with open("config.json", "w") as w:
       json.dump(config, w, indent=4)
     ephemeral.wipe()
