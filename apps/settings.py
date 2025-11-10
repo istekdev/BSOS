@@ -12,7 +12,8 @@ Welcome to BSOS Settings
 
 Display:
 ---
-[COLORS] - Toggle Text Colors"""
+[COLORS] - Toggle Text Colors
+[X] - Exit"""
       
 def menu():
   if config["config"]["colors"] == True:
@@ -61,6 +62,9 @@ def menu():
       hashing.start()
       system.clear()
       menu()
+    elif input.upper() in ["X", "[X]"]:
+      system.clear()
+      return
     else:
       print("Error - Function Does Not Exist")
       time.sleep(3)
