@@ -114,7 +114,7 @@ def login(option):
       print(colored("Welcome to BSOS!", "green", attrs=["bold"]))
       time.sleep(2)
       system.clear()
-      home("colors)
+      home("colors")
     else:
       print(colored("Error - Incorrect Password", "red", attrs=["bold"]))
       time.sleep(3)
