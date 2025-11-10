@@ -5,13 +5,72 @@ import system
 import json
 import time
 
+homeTitle = """
+[B] - Bank
+[CA] - Calculator
+[CO] - Crypto Miner
+[G] - Gambling
+[R] - Randomness
+[S] - Settings"""
+
 with open("config.json", "r") as r:
   config = json.load(r)
 
 psw = ""
 
 def home(option):
-  if option.upper() == "colors":
+  if option.lower() == "colors":
+    print(colored(homeTitle + "\n\n", "white", attrs=["bold"]))
+    apps = input(colored(">> ", "white", attrs=["bold"]))
+    if apps.upper() in ["B", "[B]"]:
+      bank.withColor()
+      home()
+    elif apps.upper() in ["CA", "[CA]"]:
+      calculator.withColor()
+      home()
+    elif apps.upper() in ["CO", "[CO]"]:
+      cryptominer.menu()
+      home()
+    elif apps.upper() in ["G", "[G]"]:
+      gambling.menu()
+      home()
+    elif apps.upper() in ["R", "[R]"]:
+      randomness.menu()
+      home()
+    elif apps.upper in ["S", "[S]"]:
+      settings.menu()
+      home()
+    else:
+      print(colored("Error - Function Dosen't Exist", "red", attrs=["bold"]))
+      time.sleep(3)
+      system.clear()
+      home("colors")
+  elif option.lower() == "regular":
+    print(homeTitle + "\n\n")
+    apps = input(">> ", "white")
+    if apps.upper() in ["B", "[B]"]:
+      bank.nonColor()
+      home()
+    elif apps.upper() in ["CA", "[CA]"]:
+      calculator.nonColor()
+      home()
+    elif apps.upper() in ["CO", "[CO]"]:
+      cryptominer.menu()
+      home()
+    elif apps.upper() in ["G", "[G]"]:
+      gambling.menu()
+      home()
+    elif apps.upper() in ["R", "[R]"]:
+      randomness.menu()
+      home()
+    elif apps.upper in ["S", "[S]"]:
+      settings.menu()
+      home()
+    else:
+      print("Error - Function Dosen't Exist")
+      time.sleep(3)
+      system.clear()
+      home("regular")
     
 
 def register(option):
