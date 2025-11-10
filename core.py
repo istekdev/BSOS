@@ -8,7 +8,6 @@ import time
 psw = ""
 
 def register(option):
-  global password
   if option.lower() == "colors":
     psw = input(colored("Create a New Password: ", "white", attrs=["bold"]))
     system.clear()
@@ -40,8 +39,11 @@ def register(option):
       system.clear()
       register("regular")
 
-def login():
-  #
+def login(option):
+  if option.lower() == "colors":
+    print(colored(f"Login to BSOS as {config["dynamic"]["user"]}\n\n", "white", attrs=["bold"]))
+    psw = input(colored("Enter your Password: ", "white", attrs=["bold"]))
+    #
 
 def logout(option):
   if option.lower() == "colors":
