@@ -1,6 +1,6 @@
-import system
+import core
 
-password = system.psw
+password = core.psw
 
 def wipe():
   password = None
