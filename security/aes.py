@@ -13,7 +13,7 @@ with open("config.json", "r") as r:
 salt = bytes.fromhex(config["dynamic"]["salt"])
 nonce = bytes.fromhex(config["dynamic"]["nonce"])
 
-def encrypt():
+def e():
   if hashing.verify() == True:
     if config["dynamic"]["salt"] == None:
       config["dynamic"]["salt"] = hex(os.urandom(16))
@@ -31,7 +31,7 @@ def encrypt():
     else:
       return False
 
-def decrypt():
+def d():
   if hashing.verify() == True:
     password = (ephemeral.password).encode("utf-8")
     aes = AESGCM(pbkdf2_hmac("sha256", password, salt, 200_000, dklen=32))
