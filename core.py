@@ -5,7 +5,13 @@ import system
 import json
 import time
 
+with open("config.json", "r") as r:
+  config = json.load(r)
+
 psw = ""
+
+def home(option):
+  #
 
 def register(option):
   if option.lower() == "colors":
@@ -43,7 +49,31 @@ def login(option):
   if option.lower() == "colors":
     print(colored(f"Login to BSOS as {config["dynamic"]["user"]}\n\n", "white", attrs=["bold"]))
     psw = input(colored("Enter your Password: ", "white", attrs=["bold"]))
-    #
+    aes.d()
+    if config["dynamic"]["status"] == "OK":
+      print(colored("Welcome to BSOS!", "green", attrs=["bold"]))
+      time.sleep(2)
+      system.clear()
+      home()
+    else:
+      print(colored("Error - Incorrect Password", "red", attrs=["bold"]))
+      time.sleep(3)
+      system.clear()
+      login()
+  elif option.lower() == "regular":
+    print(f"Login to BSOS as {config["dynamic"]["user"]}\n\n")
+    psw = input("Enter your Password: ")
+    aes.d()
+    if config["dynamic"]["status"] == "OK":
+      print("Welcome to BSOS!")
+      time.sleep(2)
+      system.clear()
+      home()
+    else:
+      print("Error - Incorrect Password")
+      time.sleep(3)
+      system.clear()
+      login()
 
 def logout(option):
   if option.lower() == "colors":
