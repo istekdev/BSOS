@@ -10,7 +10,7 @@ def start():
     nonce = os.urandom(10)
     system.config["dynamic"]["nonce"] = nonce.hex()
   system.config["configHash"] = sha256(sha256(static).digest()).hexdigest()
-  with open("./system.config.json", "w") as w:
+  with open("./config.json", "w") as w:
     json.dump(system.config, w, indent=4)
 
 def verify():
