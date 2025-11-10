@@ -53,7 +53,7 @@ def menu():
     input = input(colored(">> ", "white", attrs=["bold"]))
     if input.upper() in ["X", "[X]"]:
       system.clear()
-      system.home()
+      return
     elif input.upper() in ["P", "[P]"]:
       system.clear()
       print(colored("[LITTLE] - Little Security\n\n[MOD] - Moderate Security\n\n[HIGH] - High Security\n\n[X] - Exit\n\n", "white", attrs=["bold"]))
@@ -98,7 +98,7 @@ def menu():
     input = input(">> ")
     if input.upper() in ["X", "[X]"]:
       system.clear()
-      system.home()
+      return
     elif input.upper() in ["P", "[P]"]:
       system.clear()
       print("[LITTLE] - Little Security\n\n[MOD] - Moderate Security\n\n[HIGH] - High Security\n\n[X] - Exit\n\n")
