@@ -32,7 +32,7 @@ def roulette():
     option = input(colored(">> ", "white", attrs=["bold"]))
     if option.upper() in ["N", "[N]"]:
       yourSelection = input(colored(">> ", "white", attrs=["bold"]))
-      if yourSelection.isdigit() and if yourSelection <= 36:
+      if yourSelection.isdigit() and yourSelection <= 36:
         pass
       else:
         print(colored("Error - Must Be A Valid Number Between 1 and 36", "red", attrs=["bold"]))
@@ -40,7 +40,7 @@ def roulette():
         system.clear()
         roulette()
       for c in range(5, 0, -1):
-        print(colored(f"Rolling - Results In: {c}", "white", attrs=["bold
+        print(colored(f"Rolling - Results In: {c}", "white", attrs=["bold"]))
         time.sleep(1)
         system.clear()
       print(colored(f"Your Number: {str(yourSelection)}", "white", attrs=["bold"]))
@@ -101,7 +101,7 @@ def roulette():
     option = input(">> ")
     if option.upper() in ["N", "[N]"]:
       yourSelection = input(">> ")
-      if yourSelection.isdigit() and if yourSelection <= 36:
+      if yourSelection.isdigit() and yourSelection <= 36:
         pass
       else:
         print("Error - Must Be A Valid Number Between 1 and 36")
