@@ -11,7 +11,8 @@ with open("config.json", "r") as r:
 psw = ""
 
 def home(option):
-  #
+  if option.upper() == "colors":
+    
 
 def register(option):
   if option.lower() == "colors":
@@ -23,7 +24,7 @@ def register(option):
       print(colored("Welcome to BSOS", "green", attrs=["bold"]))
       time.sleep(1)
       system.clear()
-      home()
+      home("colors")
     else:
       print(colored("Error - Password Is Incorrect", "red", attrs=["bold"]))
       time.sleep(3)
@@ -38,7 +39,7 @@ def register(option):
       print("Welcome to BSOS")
       time.sleep(1)
       system.clear()
-      home()
+      home("regular")
     else:
       print("Error - Password Is Incorrect")
       time.sleep(3)
@@ -54,7 +55,7 @@ def login(option):
       print(colored("Welcome to BSOS!", "green", attrs=["bold"]))
       time.sleep(2)
       system.clear()
-      home()
+      home("colors)
     else:
       print(colored("Error - Incorrect Password", "red", attrs=["bold"]))
       time.sleep(3)
@@ -68,7 +69,7 @@ def login(option):
       print("Welcome to BSOS!")
       time.sleep(2)
       system.clear()
-      home()
+      home("regular")
     else:
       print("Error - Incorrect Password")
       time.sleep(3)
