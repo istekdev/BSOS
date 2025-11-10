@@ -27,7 +27,7 @@ def withColor():
       withColor()
   elif input.upper() in ["X", "[X]"]:
     system.clear()
-    system.home()
+    core.home()
   else:
     print(colored("Error - Function Dosen't Exist", "red", attrs=["bold"]))
     time.sleep(1)
@@ -45,17 +45,17 @@ def nonColor():
     option = input(">> ")
     if option.upper() in ["X", "[X]"]:
       system.clear()
-      withColor()
+      core.home()
     else:
       print("Error - Function Dosen't Exist")
       time.sleep(1)
       system.clear()
-      withColor()
+      nonColor()
   else:
     print("Error - Function Dosen't Exist")
     time.sleep(1)
     system.clear()
-    withColor()
+    nonColor()
 
 def verify():
   with open("././config.json", "r") as r:
